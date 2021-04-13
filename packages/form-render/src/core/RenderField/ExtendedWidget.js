@@ -14,6 +14,8 @@ const ExtendedWidget = ({
   value,
   children,
   onItemChange,
+  formData,
+  getValue,
   readOnly,
   dataPath,
   dataIndex,
@@ -72,7 +74,14 @@ const ExtendedWidget = ({
 
   // 避免传组件不接受的props，按情况传多余的props
   // const isExternalWidget = defaultWidgetNameList.indexOf(widgetName) === -1; // 是否是外部组件
-  widgetProps.addons = { onItemChange, dataPath, dataIndex };
+  widgetProps.addons = {
+    onItemChange,
+    setValue: onItemChange,
+    getValue,
+    formData,
+    dataPath,
+    dataIndex,
+  };
 
   const finalProps = transformProps(widgetProps);
 
@@ -90,9 +99,7 @@ const areEqual = (prev, current) => {
     prev.value === current.value &&
     JSON.stringify(prev.schema) === JSON.stringify(current.schema)
   ) {
-    if (window.NOTHING_CHANGED_IN_WIDGETS) {
-      return true; // TODO: return true 之后 useForm 里的 formData 的更新会出问题，why
-    }
+    return true;
   }
   return false;
 };
