@@ -22,7 +22,7 @@ const SearchBtn = ({ clearSearch }: any) => {
 };
 
 export interface SearchProps {
-  api: any;
+  api?: any;
   propsSchema?: any;
   className?: string;
   style?: React.CSSProperties;
