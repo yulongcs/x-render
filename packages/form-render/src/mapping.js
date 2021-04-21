@@ -8,16 +8,24 @@ export const mapping = {
   object: 'map',
   html: 'html',
   'string:upload': 'upload',
-  'string:date': 'date',
   'string:url': 'url',
   'string:dateTime': 'date',
-  'string:time': 'date',
+  'string:date': 'date',
+  'string:year': 'date',
+  'string:month': 'date',
+  'string:week': 'date',
+  'string:quarter': 'date',
+  'string:time': 'time',
   'string:textarea': 'textarea',
   'string:color': 'color',
   'string:image': 'imageInput',
-  'range:time': 'dateRange',
-  'range:date': 'dateRange',
+  'range:time': 'timeRange',
   'range:dateTime': 'dateRange',
+  'range:date': 'dateRange',
+  'range:year': 'dateRange',
+  'range:month': 'dateRange',
+  'range:week': 'dateRange',
+  'range:quarter': 'dateRange',
   '*?enum': 'radio',
   '*?enum_long': 'select',
   'array?enum': 'checkboxes',
@@ -26,7 +34,7 @@ export const mapping = {
 };
 
 export function getWidgetName(schema, _mapping = mapping) {
-  const { type, format, enum: enums, readOnly } = schema;
+  const { type, format, enum: enums, readOnly, widget } = schema;
 
   // 如果已经注明了渲染widget，那最好
   // if (schema['ui:widget']) {
@@ -40,7 +48,11 @@ export function getWidgetName(schema, _mapping = mapping) {
   }
   if (enums) {
     // 根据enum长度来智能选择控件
-    if (Array.isArray(enums) && enums.length > 2) {
+    if (
+      Array.isArray(enums) &&
+      ((type === 'array' && enums.length > 6) ||
+        (type !== 'array' && enums.length > 2))
+    ) {
       list.push(`${type}?enum_long`);
       list.push('*?enum_long');
     } else {
@@ -49,8 +61,9 @@ export function getWidgetName(schema, _mapping = mapping) {
       list.push('*?enum');
     }
   }
-  if (format) {
-    list.push(`${type}:${format}`);
+  const _widget = widget || format;
+  if (_widget) {
+    list.push(`${type}:${_widget}`);
   }
   list.push(type); // 放在最后兜底，其他都不match时使用type默认的组件
   let found = '';

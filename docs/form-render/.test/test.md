@@ -5,12 +5,13 @@ import FormRender, { useForm } from 'form-render';
 
 const schema = {
   type: 'object',
+  displayType: 'row',
   properties: {
     listName2: {
       title: '对象数组',
       description: '对象数组嵌套功能',
       type: 'array',
-      widget: 'list2',
+      widget: 'list0',
       items: {
         type: 'object',
         properties: {
@@ -19,7 +20,7 @@ const schema = {
             type: 'string',
             required: true,
           },
-          selet1: {
+          select1: {
             title: '单选',
             type: 'string',
             enum: ['a', 'b', 'c'],
@@ -61,7 +62,7 @@ const Demo = () => {
 
   return (
     <div>
-      <FormRender form={form} schema={schema} onFinish={onFinish} />
+      <FormRender debug form={form} schema={schema} onFinish={onFinish} />
       <Button type="primary" onClick={form.submit}>
         提交
       </Button>

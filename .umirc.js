@@ -51,8 +51,8 @@ export default defineConfig({
       path: '/tools',
       children: [
         { title: 'Schema 编辑器', path: '/tools/generator' },
-        { title: 'VSCode 插件', path: '/tools/vscode' },
         { title: 'PropToSchema', path: '/tools/proptypes' },
+        { title: 'VSCode 插件', path: '/tools/vscode' },
       ],
     },
     {
@@ -82,12 +82,12 @@ export default defineConfig({
     { title: 'GitHub', path: 'https://github.com/alibaba/form-render' },
   ],
   mode: 'site',
-  alias: {
-    'form-render/dist': path.resolve(__dirname, 'packages/form-render/dist'),
-  },
+  // alias: {
+  //   'form-render/dist': path.resolve(__dirname, 'packages/form-render/dist'),
+  // },
   esbuild: {},
-  base: '/form-render/',
-  publicPath: '/form-render/',
+  // base: '/x-render/',
+  publicPath: '/x-render/',
   exportStatic: {},
   extraBabelPlugins: [
     [

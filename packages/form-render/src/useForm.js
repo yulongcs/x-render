@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { validateAll } from './validator';
 import { useSet } from './hooks';
 import { set, sortedUniqBy, merge } from 'lodash';
@@ -35,7 +35,9 @@ export const useForm = props => {
   const clickSubmit = useRef(false); // 点击submit的那一下，不要执行useEffect里的validate
   const beforeFinishRef = useRef();
   const localeRef = useRef('cn');
+  const validateMessagesRef = useRef();
   const _data = useRef({}); // 用ref是为了破除闭包的影响
+  const _touchedKeys = useRef([]); // 用ref是为了破除闭包的影响
 
   const {
     formData: innerData,
@@ -55,7 +57,12 @@ export const useForm = props => {
   const formData = dataFromOutside ? _formData : innerData;
 
   // 生成一个基础结构，确保对象内的必填元素也被校验。
-  _data.current = merge(generateDataSkeleton(schemaRef.current), formData);
+  // _data.current = merge(generateDataSkeleton(schemaRef.current), formData);
+  _data.current = useMemo(() => {
+    return merge(generateDataSkeleton(schemaRef.current), formData);
+  }, [JSON.stringify(formData), JSON.stringify(schemaRef.current)]);
+
+  _touchedKeys.current = touchedKeys;
 
   // 两个兼容 0.x 的函数
   const _setData = data => {
@@ -74,10 +81,10 @@ export const useForm = props => {
   };
 
   const touchKey = key => {
-    if (touchedKeys.indexOf(key) > -1) {
+    if (_touchedKeys.current.indexOf(key) > -1) {
       return;
     }
-    const newKeyList = [...touchedKeys, key];
+    const newKeyList = [..._touchedKeys.current, key];
     setState({ touchedKeys: newKeyList });
   };
 
@@ -90,8 +97,9 @@ export const useForm = props => {
           formData: _data.current,
           schema: schemaRef.current,
           isRequired: true,
-          touchedKeys,
+          touchedKeys: _touchedKeys.current,
           locale: localeRef.current,
+          validateMessages: validateMessagesRef.current,
         }).then(res => {
           const oldFormatErrors = res.map(item => item.name);
           _onValidate(oldFormatErrors);
@@ -110,8 +118,9 @@ export const useForm = props => {
       formData: _data.current,
       schema: schemaRef.current,
       isRequired: allTouched,
-      touchedKeys,
+      touchedKeys: _touchedKeys.current,
       locale: localeRef.current,
+      validateMessages: validateMessagesRef.current,
     }).then(res => {
       _setErrors(res);
     });
@@ -136,11 +145,18 @@ export const useForm = props => {
   //   { name: 'a.b.c', errors: ['Please input your Password!', 'something else is wrong'] },
   // ]
 
-  const syncStuff = ({ schema, flatten, beforeFinish, locale }) => {
+  const syncStuff = ({
+    schema,
+    flatten,
+    beforeFinish,
+    locale,
+    validateMessages,
+  }) => {
     schemaRef.current = schema;
     flattenRef.current = flatten;
     beforeFinishRef.current = beforeFinish;
     localeRef.current = locale;
+    validateMessagesRef.current = validateMessages;
   };
 
   // TODO: 外部校验的error要和本地的合并么？
@@ -187,6 +203,7 @@ export const useForm = props => {
       touchedKeys: [],
       isRequired: true,
       locale: localeRef.current,
+      validateMessages: validateMessagesRef.current,
     })
       .then(errors => {
         // 如果有错误，也不停止校验和提交，在onFinish里让用户自己搞
@@ -227,6 +244,7 @@ export const useForm = props => {
 
   const resetFields = () => {
     _setData({});
+    _setErrors([]);
   };
 
   // const setValue = (id, value, dataIndex) => {
@@ -264,7 +282,7 @@ export const useForm = props => {
     // state
     formData: _data.current,
     schema: schemaRef.current,
-    touchedKeys,
+    touchedKeys: _touchedKeys.current,
     allTouched,
     // methods
     touchKey,
