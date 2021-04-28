@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useTable } from './hooks';
+import { useTable } from '../utils/hooks';
 import { Button } from 'antd';
 import SearchForm, { useForm } from 'form-render';
 

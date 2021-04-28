@@ -1,8 +1,8 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
-import { useSet, useTable } from './hooks';
-import { Ctx } from './context';
-import Search from './Search';
-import Table from './Table';
+import { useSet, useTable } from './utils/hooks';
+import { Ctx } from './utils/context';
+import Search from './components/Search';
+import Table from './components/Table';
 import { message, ConfigProvider } from 'antd';
 import { isObj } from './utils';
 import _get from 'lodash.get';

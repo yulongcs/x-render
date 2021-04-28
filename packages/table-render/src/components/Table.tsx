@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useTable } from './hooks';
+import { useTable } from '../utils/hooks';
 import { Table, Radio, Space } from 'antd';
 
-import { getDate, getDateTime, getMoneyType } from './utils';
+import { getDate, getDateTime, getMoneyType } from '../utils';
 import { renderDom } from './field';
 
-import ErrorBoundary from './components/ErrorBoundary';
-import ToolBarAction from './components/ToolBarAction';
+import ErrorBoundary from './ErrorBoundary';
+import ToolBarAction from './ToolBarAction';
 
-import { ProTableProps } from './typing';
+import { ProTableProps } from '../typing';
 
 const ProTable = (props: ProTableProps) => {
   if (props.dataSource) {
