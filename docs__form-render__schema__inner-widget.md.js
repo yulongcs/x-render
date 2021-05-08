@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{y1sG:function(E,a,e){"use strict";e.r(a);var l=e("q1tI"),u=e.n(l),n=e("dEAq"),F=e.n(n),t=e("ZpkN"),r=e("JjdP");a.default=function(){return u.a.createElement(u.a.Fragment,null,u.a.createElement("div",{className:"markdown"},u.a.createElement("h1",{id:"\u5185\u7F6E\u7EC4\u4EF6"},u.a.createElement(n.AnchorLink,{to:"#\u5185\u7F6E\u7EC4\u4EF6","aria-hidden":"true",tabIndex:-1},u.a.createElement("span",{className:"icon icon-link"})),"\u5185\u7F6E\u7EC4\u4EF6"),u.a.createElement("p",null,"\u76EE\u524D FormRender \u5DF2\u7ECF\u652F\u6301\u7684\u5185\u7F6E\u7EC4\u4EF6\u7684\u5C55\u793A\uFF0C\u89C1 ",u.a.createElement(n.Link,{to:"/playground"},"playground")," - \u57FA\u7840\u63A7\u4EF6"),u.a.createElement("p",null,"\u7EC4\u4EF6\u4E0E widget name \u7684\u89C4\u5219\u5982\u4E0B\uFF1A"),u.a.createElement(t.a,{code:`# \u8F93\u5165\u7C7B
+(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{y1sG:function(E,a,e){"use strict";e.r(a);var l=e("q1tI"),u=e.n(l),n=e("dEAq"),F=e.n(n),t=e("ZpkN"),r=e("JjdP");a.default=()=>(u.a.useEffect(()=>{window.location.hash&&n.AnchorLink.scrollToAnchor(decodeURIComponent(window.location.hash.slice(1)))},[]),u.a.createElement(u.a.Fragment,null,u.a.createElement("div",{className:"markdown"},u.a.createElement("h1",{id:"\u5185\u7F6E\u7EC4\u4EF6"},u.a.createElement(n.AnchorLink,{to:"#\u5185\u7F6E\u7EC4\u4EF6","aria-hidden":"true",tabIndex:-1},u.a.createElement("span",{className:"icon icon-link"})),"\u5185\u7F6E\u7EC4\u4EF6"),u.a.createElement("p",null,"\u76EE\u524D FormRender \u5DF2\u7ECF\u652F\u6301\u7684\u5185\u7F6E\u7EC4\u4EF6\u7684\u5C55\u793A\uFF0C\u89C1 ",u.a.createElement(n.Link,{to:"/playground"},"playground")," - \u57FA\u7840\u63A7\u4EF6"),u.a.createElement("p",null,"\u7EC4\u4EF6\u4E0E widget name \u7684\u89C4\u5219\u5982\u4E0B\uFF1A"),u.a.createElement(t.a,{code:`# \u8F93\u5165\u7C7B
 \u8F93\u5165\u6846 input
 \u591A\u884C\u8F93\u5165\u6846 textarea
 \u6570\u5B57\u8F93\u5165\u6846 number
@@ -63,4 +63,4 @@
   type: 'string',
   enum: ['a', 'b'],
   enumNames: ['\u9009\u98791', '\u9009\u98792'],
-}`,lang:"js"})))}}}]);
+}`,lang:"js"}))))}}]);
