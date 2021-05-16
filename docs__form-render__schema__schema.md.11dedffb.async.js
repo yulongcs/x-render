@@ -1076,18 +1076,13 @@ import { Button, Modal, Input } from 'antd';
 const { TextArea } = Input;
 
 const defaultValue = {
-  schema: {
-    type: 'object',
-    properties: {
-      inputName: {
-        title: '\u7B80\u5355\u8F93\u5165\u6846',
-        type: 'string',
-      },
+  type: 'object',
+  properties: {
+    inputName: {
+      title: '\u7B80\u5355\u8F93\u5165\u6846',
+      type: 'string',
     },
   },
-  displayType: 'row',
-  showDescIcon: true,
-  labelWidth: 120,
 };
 
 const templates = [
@@ -1313,14 +1308,13 @@ const Demo = () => {
             title: '\u4E2A\u4EBA\u4FE1\u606F',
             widgets: [
               {
-                text: '\u670D\u52A1\u7AEF\u4E0B\u62C9\u9009\u6846',
+                text: '\u8BA1\u6570\u5668',
                 name: 'asyncSelect',
                 schema: {
-                  title: '\u6765\u81EA\u670D\u52A1\u7AEF',
-                  type: 'string',
-                  'ui:widget': 'NewWidget',
+                  title: '\u8BA1\u6570\u5668',
+                  type: 'number',
+                  widget: 'NewWidget',
                 },
-                widget: 'NewWidget',
                 setting: {
                   api: { title: 'api', type: 'string' },
                 },
@@ -1333,7 +1327,6 @@ const Demo = () => {
                   type: 'object',
                   properties: {},
                 },
-                widget: 'map',
                 setting: {},
               },
               {
@@ -2817,22 +2810,17 @@ const Wrapper = () => {
   );
 };
 
-export default Wrapper;`}},dependencies:{react:{version:">=16.8.0"},"table-render":{version:"1.1.0"},antd:{version:"4.x",css:"antd/dist/antd.css"},"form-render":{version:"1.x"}},transform:!0,defaultShowCode:!0,identifier:"table-render-demo"}},"generator-demo":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){var p,s,y,F,R,u;return f.a.wrap(function(E){for(;;)switch(E.prev=E.next){case 0:return p=e("K+nK"),E.t0=p,E.next=4,Promise.resolve().then(e.t.bind(null,"q1tI",7));case 4:return E.t1=E.sent,s=(0,E.t0)(E.t1),E.t2=p,E.next=9,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(56)]).then(e.bind(null,"nYSz"));case 9:return E.t3=E.sent,y=(0,E.t2)(E.t3),F={schema:{type:"object",properties:{inputName:{title:"\u7B80\u5355\u8F93\u5165\u6846",type:"string"}}},displayType:"row",showDescIcon:!0,labelWidth:120},R=function(){return s.default.createElement("div",{style:{height:"80vh"}},s.default.createElement(y.default,{defaultValue:F}))},u=R,E.abrupt("return",u);case 15:case"end":return E.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:`import React from 'react';
+export default Wrapper;`}},dependencies:{react:{version:">=16.8.0"},"table-render":{version:"1.1.0"},antd:{version:"4.x",css:"antd/dist/antd.css"},"form-render":{version:"1.x"}},transform:!0,defaultShowCode:!0,identifier:"table-render-demo"}},"generator-demo":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){var p,s,y,F,R,u;return f.a.wrap(function(E){for(;;)switch(E.prev=E.next){case 0:return p=e("K+nK"),E.t0=p,E.next=4,Promise.resolve().then(e.t.bind(null,"q1tI",7));case 4:return E.t1=E.sent,s=(0,E.t0)(E.t1),E.t2=p,E.next=9,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(56)]).then(e.bind(null,"nYSz"));case 9:return E.t3=E.sent,y=(0,E.t2)(E.t3),F={type:"object",properties:{inputName:{title:"\u7B80\u5355\u8F93\u5165\u6846",type:"string"}}},R=function(){return s.default.createElement("div",{style:{height:"80vh"}},s.default.createElement(y.default,{defaultValue:F}))},u=R,E.abrupt("return",u);case 15:case"end":return E.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:`import React from 'react';
 import Generator from 'fr-generator';
 
 const defaultValue = {
-  schema: {
-    type: 'object',
-    properties: {
-      inputName: {
-        title: '\u7B80\u5355\u8F93\u5165\u6846',
-        type: 'string',
-      },
+  type: 'object',
+  properties: {
+    inputName: {
+      title: '\u7B80\u5355\u8F93\u5165\u6846',
+      type: 'string',
     },
   },
-  displayType: 'row',
-  showDescIcon: true,
-  labelWidth: 120,
 };
 
 const Demo = () => {
@@ -2843,7 +2831,7 @@ const Demo = () => {
   );
 };
 
-export default Demo;`}},dependencies:{react:{version:">=16.8.0"},"fr-generator":{version:"2.0.1"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},transform:!0,defaultShowCode:!0,identifier:"generator-demo"}},"generator-modal":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"PPgD"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:wn}},dependencies:{antd:{version:"4.x",css:"antd/dist/antd.css"},react:{version:">=16.9.0"},"fr-generator":{version:"2.0.1"},"react-dom":{version:">=16.9.0"}},identifier:"generator-modal"}},"generator-transformer":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"jktF"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:On}},dependencies:{antd:{version:"4.x",css:"antd/dist/antd.css"},react:{version:">=16.9.0"},"fr-generator":{version:"2.0.1"},"react-dom":{version:">=16.9.0"}},identifier:"generator-transformer"}},"generator-settings":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"M63W"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:we}},dependencies:{react:{version:">=16.8.0"},"fr-generator":{version:"2.0.1"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},identifier:"generator-settings"}},"generator-playground":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"TYW4"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:kn},"index.less":{import:"./index.less",content:$n}},dependencies:{react:{version:">=16.8.0"},umi:{version:"3.4.20"},"fr-generator":{version:"2.0.1"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},identifier:"generator-playground"}}}},TIsu:function(Nn,gn,e){},Zs1V:function(Nn){Nn.exports=JSON.parse("{}")},dKoY:function(Nn,gn,e){"use strict";e.r(gn);var X=e("q1tI"),n=e.n(X),f=e("dEAq"),V=e.n(f),ce=e("0zqC"),K=e("ZpkN"),tn=e("JjdP"),Be=n.a.memo(tn.default["schema-demo"].component);gn.default=me=>(n.a.useEffect(()=>{me!=null&&me.location.hash&&f.AnchorLink.scrollToAnchor(decodeURIComponent(me.location.hash.slice(1)))},[]),n.a.createElement(n.a.Fragment,null,n.a.createElement(n.a.Fragment,null,n.a.createElement("div",{className:"markdown"},n.a.createElement("h1",{id:"\u4E66\u5199\u89C4\u8303"},n.a.createElement(f.AnchorLink,{to:"#\u4E66\u5199\u89C4\u8303","aria-hidden":"true",tabIndex:-1},n.a.createElement("span",{className:"icon icon-link"})),"\u4E66\u5199\u89C4\u8303"),n.a.createElement("h2",{id:"\u6982\u8FF0"},n.a.createElement(f.AnchorLink,{to:"#\u6982\u8FF0","aria-hidden":"true",tabIndex:-1},n.a.createElement("span",{className:"icon icon-link"})),"\u6982\u8FF0"),n.a.createElement("ol",null,n.a.createElement("li",null,n.a.createElement("p",null,n.a.createElement("strong",null,n.a.createElement("code",null,"schema")," \u662F <FormRender/> \u7684\u5FC5\u586B props\uFF0C\u7528\u4E8E\u63CF\u8FF0\u8868\u5355\u7684\u57FA\u672C\u4FE1\u606F\u3001\u7ED3\u6784\u548C\u6821\u9A8C\u3002\u4ED6\u5728\u7ED3\u6784\u4E0A\u4F7F\u7528\u4E86 ",n.a.createElement("code",null,"JSON Schema")," \u56FD\u9645\u89C4\u8303(",n.a.createElement(f.Link,{to:"https://json-schema.org/understanding-json-schema/",target:"_blank"},"Understanding JSON Schema"),")\uFF0C\u4F8B\u5982\uFF1A")),n.a.createElement(K.a,{code:`// \u5BF9\u8C61\u7ED3\u6784\u5982\u4E0B:
+export default Demo;`}},dependencies:{react:{version:">=16.8.0"},"fr-generator":{version:"2.0.2"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},transform:!0,defaultShowCode:!0,identifier:"generator-demo"}},"generator-modal":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"PPgD"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:wn}},dependencies:{antd:{version:"4.x",css:"antd/dist/antd.css"},react:{version:">=16.9.0"},"fr-generator":{version:"2.0.2"},"react-dom":{version:">=16.9.0"}},identifier:"generator-modal"}},"generator-transformer":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"jktF"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:On}},dependencies:{antd:{version:"4.x",css:"antd/dist/antd.css"},react:{version:">=16.9.0"},"fr-generator":{version:"2.0.2"},"react-dom":{version:">=16.9.0"}},identifier:"generator-transformer"}},"generator-settings":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"M63W"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:we}},dependencies:{react:{version:">=16.8.0"},"fr-generator":{version:"2.0.2"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},identifier:"generator-settings"}},"generator-playground":{component:Object(V.dynamic)({loader:function(){var M=Object(X.a)(f.a.mark(function T(){return f.a.wrap(function(s){for(;;)switch(s.prev=s.next){case 0:return s.next=2,Promise.all([e.e(0),e.e(1),e.e(2),e.e(3),e.e(20)]).then(e.bind(null,"TYW4"));case 2:return s.abrupt("return",s.sent.default);case 3:case"end":return s.stop()}},T)}));function I(){return M.apply(this,arguments)}return I}()}),previewerProps:{sources:{_:{jsx:kn},"index.less":{import:"./index.less",content:$n}},dependencies:{react:{version:">=16.8.0"},umi:{version:"3.4.20"},"fr-generator":{version:"2.0.2"},antd:{version:"4.x",css:"antd/dist/antd.css"},"react-dom":{version:">=16.8.0"}},identifier:"generator-playground"}}}},TIsu:function(Nn,gn,e){},Zs1V:function(Nn){Nn.exports=JSON.parse("{}")},dKoY:function(Nn,gn,e){"use strict";e.r(gn);var X=e("q1tI"),n=e.n(X),f=e("dEAq"),V=e.n(f),ce=e("0zqC"),K=e("ZpkN"),tn=e("JjdP"),Be=n.a.memo(tn.default["schema-demo"].component);gn.default=me=>(n.a.useEffect(()=>{me!=null&&me.location.hash&&f.AnchorLink.scrollToAnchor(decodeURIComponent(me.location.hash.slice(1)))},[]),n.a.createElement(n.a.Fragment,null,n.a.createElement(n.a.Fragment,null,n.a.createElement("div",{className:"markdown"},n.a.createElement("h1",{id:"\u4E66\u5199\u89C4\u8303"},n.a.createElement(f.AnchorLink,{to:"#\u4E66\u5199\u89C4\u8303","aria-hidden":"true",tabIndex:-1},n.a.createElement("span",{className:"icon icon-link"})),"\u4E66\u5199\u89C4\u8303"),n.a.createElement("h2",{id:"\u6982\u8FF0"},n.a.createElement(f.AnchorLink,{to:"#\u6982\u8FF0","aria-hidden":"true",tabIndex:-1},n.a.createElement("span",{className:"icon icon-link"})),"\u6982\u8FF0"),n.a.createElement("ol",null,n.a.createElement("li",null,n.a.createElement("p",null,n.a.createElement("strong",null,n.a.createElement("code",null,"schema")," \u662F <FormRender/> \u7684\u5FC5\u586B props\uFF0C\u7528\u4E8E\u63CF\u8FF0\u8868\u5355\u7684\u57FA\u672C\u4FE1\u606F\u3001\u7ED3\u6784\u548C\u6821\u9A8C\u3002\u4ED6\u5728\u7ED3\u6784\u4E0A\u4F7F\u7528\u4E86 ",n.a.createElement("code",null,"JSON Schema")," \u56FD\u9645\u89C4\u8303(",n.a.createElement(f.Link,{to:"https://json-schema.org/understanding-json-schema/",target:"_blank"},"Understanding JSON Schema"),")\uFF0C\u4F8B\u5982\uFF1A")),n.a.createElement(K.a,{code:`// \u5BF9\u8C61\u7ED3\u6784\u5982\u4E0B:
 {
   "title": "\u5BF9\u8C61",
   "type": "object",
