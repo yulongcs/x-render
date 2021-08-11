@@ -6580,7 +6580,7 @@ export default Demo;`}},dependencies:{react:{version:">=16.8.0"},"fr-generator":
         title: '\u5355\u90092\uFF08\u81EA\u5B9A\u4E49\u7EC4\u4EF6\uFF09',
         type: 'string',
         widget: 'select2', // select2 \u4E3A\u81EA\u5B9A\u4E49\u7EC4\u4EF6\uFF0C\u5177\u4F53\u5B9E\u73B0\u4E0Edependencies\u7684\u8BA8\u8BBA\u65E0\u5173\uFF0C\u4E0D\u8D58\u8FF0
-        dependencies: ['list1.select1'],
+        dependencies: ['list1[].select1'],
       },
     },
   },
