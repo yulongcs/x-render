@@ -48,25 +48,32 @@ npm i form-render --save
  * transform: true
  * defaultShowCode: true
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'antd';
 import FormRender, { useForm } from 'form-render';
 
 const schema = {
   type: 'object',
   properties: {
-    input1: {
-      title: '简单输入框',
-      type: 'string',
-      required: true,
-    },
-    select1: {
-      title: '单选',
-      type: 'string',
-      enum: ['a', 'b', 'c'],
-      enumNames: ['早', '中', '晚'],
+    list2: {
+      title: '数组',
+      type: 'array',
+      widget: 'list2',
+      items: {
+        type: 'object',
+        properties: {
+          inputName: {
+            title: '简单输入框',
+            type: 'string',
+            props: {},
+          },
+        },
+      },
+      props: {},
     },
   },
+  labelWidth: 120,
+  displayType: 'row',
 };
 
 const Demo = () => {
@@ -74,6 +81,51 @@ const Demo = () => {
   const onFinish = (formData, errors) => {
     console.log('formData:', formData, 'errors', errors);
   };
+  useEffect(() => {
+    form.setValues({
+      list2: [
+        {
+          inputName: '1',
+        },
+        {
+          inputName: '2',
+        },
+        {
+          inputName: '3',
+        },
+        {
+          inputName: '4',
+        },
+        {
+          inputName: '5',
+        },
+        {
+          inputName: '6',
+        },
+        {
+          inputName: '7',
+        },
+        {
+          inputName: '8',
+        },
+        {
+          inputName: '9',
+        },
+        {
+          inputName: '10',
+        },
+        {
+          inputName: '11',
+        },
+        {
+          inputName: '12',
+        },
+        {
+          inputName: '13',
+        },
+      ],
+    });
+  }, []);
   return (
     <div>
       <FormRender form={form} schema={schema} onFinish={onFinish} />

@@ -31,7 +31,7 @@ const TableList = ({
     ...pagination,
   };
 
-  const dataSource = displayList.map((item, idx) => {
+  const dataSource = (displayList || []).map((item, idx) => {
     return { index: idx };
   });
 
